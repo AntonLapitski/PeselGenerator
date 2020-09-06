@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PESEL Number Generator</title>
+		
+        <script src="javascriptfunctions.js"></script>
+        
+	</head>
+    
+	<body>
+        
+        <center><h1>PESEL Number Generator</h1></center>
+        
+        <div id="gender" class="genderbox"> 
+            <input type="checkbox" id="check_1" > Male
+            <input type="checkbox" id="check_2" > Female
+            <br>
+            <br>
+            Date of Birth  
+            <br>
+            <br>
+            <input type= "date" id="dateOfBirth" />
+            <br>
+            <br>
+            <input type="submit" value="Generate" onclick="getPesel();" />
+            <form name="randform" class="shownum">    
+                <input type="text" id="text" />
+            </form>
+        </div>
+
+        
+	</body>
+    
+</html>

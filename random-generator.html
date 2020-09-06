@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home Page</title>
+		
+        <script src="javascriptfunctions.js"></script>
+        
+        
+	</head>
+	<body>
+        
+        <input type="button" value="Open Pesel Generator" onclick="openPopUp()" />
+        
+        <script type="text/javascript">
+            var myWindow;
+            function openPopUp(){
+               myWindow =  window.open('rand.html', '_blank', 'height = 500, width = 700');
+            }
+            
+            function closePopUp(){
+                myWindow.close();
+            }
+        
+        </script>
+        
+        <input type="button" value="See Generated" onclick="seeGenerated();" />
+        
+        <script type="text/javascript">
+            
+            function seeGenerated(){
+                  
+                document.write('<table>');
+                document.write('<tr><th>KeysAndDates</th></tr>');
+                var i = 0;
+                var peselsArray = new Array();
+                
+                while(localStorage.getItem(localStorage.key(i)) != null){
+                    peselsArray.push(localStorage.getItem(localStorage.key(i)));
+                    i++;
+                }
+                
+                peselsArray.reverse();
+                
+                for(j = 0; j < peselsArray.length; j++){
+                    document.write('<tr><td>' + peselsArray[j] + '</td></tr>');
+                }
+                
+                /*while(localStorage.getItem(localStorage.key(i)) != null){
+                    document.write('<tr><td>' + localStorage.getItem(localStorage.key(i)) + '</td></tr>');
+                    i++;
+                }*/
+                               
+                document.write('</table>');
+                
+                localStorage.clear();
+            }
+        
+        </script>
+        
+	</body>
+    
+</html>
